@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'customtimectrlplugin.h'
 **
-** Created: Wed 16. Mar 13:38:53 2011
+** Created: Mon 4. Apr 15:46:21 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.3)
 **
 ** WARNING! All changes made in this file will be lost!

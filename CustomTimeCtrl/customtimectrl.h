@@ -1,7 +1,7 @@
 #ifndef CUSTOMTIMECTRL_H
 #define CUSTOMTIMECTRL_H
 
-#include <QDesignerExportWidget>
+#include <QtDesigner/QDesignerExportWidget>
 #include <QtGui/QWidget>
 #include "ui_datetime.h"
 

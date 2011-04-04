@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Wed 16. Mar 17:47:06 2011
+** Created: Mon 4. Apr 16:53:24 2011
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -60,7 +60,8 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         frame = new QFrame(DateTime);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setStyleSheet(QString::fromUtf8(""));
+        frame->setFrameShape(QFrame::NoFrame);
         frame->setFrameShadow(QFrame::Raised);
         formLayout_3 = new QFormLayout(frame);
         formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
