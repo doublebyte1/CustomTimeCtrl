@@ -12,7 +12,6 @@ CustomTimeCtrl::CustomTimeCtrl(QWidget *parent)
 
 CustomTimeCtrl::~CustomTimeCtrl()
 {
-
 }
 
 void CustomTimeCtrl::setFormatInfo()
@@ -40,5 +39,15 @@ void CustomTimeCtrl::showHasDateTime(){
 
     //horizontalLayout_2->addWidget(m_bDate?groupDate:groupTime);
     //horizontalLayout_2->removeWidget(m_bTime?groupDate:groupTime);
+}
 
+QDateTime CustomTimeCtrl::dateTime()
+{
+    return QDateTime(dateEdit->date(),timeEdit->time(),m_bUTC? Qt::UTC: Qt::LocalTime);//TODO: read timespec from variable
+}
+ 
+void CustomTimeCtrl::setDateTime(const QDateTime& datetime)
+{
+    this->dateEdit->setDate(datetime.date());
+    this->timeEdit->setTime(datetime.time());
 }

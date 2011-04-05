@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Mon 4. Apr 16:53:24 2011
-**      by: Qt User Interface Compiler version 4.6.3
+** Created: Tue 5. Apr 11:33:26 2011
+**      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -82,6 +82,11 @@ public:
 
         dateEdit = new QDateEdit(groupDate);
         dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(dateEdit->sizePolicy().hasHeightForWidth());
+        dateEdit->setSizePolicy(sizePolicy);
         dateEdit->setCalendarPopup(true);
 
         formLayout_2->setWidget(0, QFormLayout::FieldRole, dateEdit);
@@ -107,6 +112,8 @@ public:
 
         timeEdit = new QTimeEdit(groupTime);
         timeEdit->setObjectName(QString::fromUtf8("timeEdit"));
+        sizePolicy.setHeightForWidth(timeEdit->sizePolicy().hasHeightForWidth());
+        timeEdit->setSizePolicy(sizePolicy);
         timeEdit->setCalendarPopup(false);
 
         formLayout->setWidget(0, QFormLayout::FieldRole, timeEdit);
@@ -141,6 +148,8 @@ public:
 
         retranslateUi(DateTime);
         QObject::connect(checkTime, SIGNAL(clicked(bool)), DateTime, SLOT(setHasTime(bool)));
+        QObject::connect(DateTime, SIGNAL(isAuto(bool)), dateEdit, SLOT(setDisabled(bool)));
+        QObject::connect(DateTime, SIGNAL(isAuto(bool)), timeEdit, SLOT(setDisabled(bool)));
 
         QMetaObject::connectSlotsByName(DateTime);
     } // setupUi

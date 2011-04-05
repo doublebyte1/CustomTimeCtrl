@@ -73,6 +73,12 @@
              </item>
              <item row="0" column="1">
               <widget class="QDateEdit" name="dateEdit">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="calendarPopup">
                 <bool>true</bool>
                </property>
@@ -121,6 +127,12 @@
              </item>
              <item row="0" column="1">
               <widget class="QTimeEdit" name="timeEdit">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="calendarPopup">
                 <bool>false</bool>
                </property>
@@ -175,8 +187,41 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>DateTime</sender>
+   <signal>isAuto(bool)</signal>
+   <receiver>dateEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>159</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DateTime</sender>
+   <signal>isAuto(bool)</signal>
+   <receiver>timeEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>159</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
+  <signal>isAuto(bool)</signal>
   <slot>setHasTime(bool)</slot>
  </slots>
 </ui>
