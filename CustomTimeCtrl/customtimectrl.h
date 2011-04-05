@@ -26,8 +26,7 @@ public:
     void setDateTime(const QDateTime &datetime);
     QDateTime dateTime();
 
-    void                setIsDateTime(const bool bDate, const bool bTime)
-                            {m_bDate=bDate; m_bTime=bTime;}
+    void                setIsDateTime(const bool bDate, const bool bTime);
 
     void                setIsUTC(const bool bUTC)
                             {m_bUTC=bUTC;}
@@ -43,6 +42,7 @@ public:
 
 signals:
     void                isAuto(bool bAuto);
+    void                isDateTime(bool bDateTime);
 
 protected:
     void                showEvent ( QShowEvent * event );

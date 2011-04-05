@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Tue 5. Apr 11:33:26 2011
+** Created: Tue 5. Apr 16:39:30 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -16,8 +16,8 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
 #include <QtGui/QDateEdit>
-#include <QtGui/QFormLayout>
 #include <QtGui/QFrame>
+#include <QtGui/QGridLayout>
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
@@ -33,19 +33,20 @@ class Ui_DateTime
 public:
     QHBoxLayout *horizontalLayout;
     QFrame *frame;
-    QFormLayout *formLayout_3;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_2;
     QGroupBox *groupDate;
-    QFormLayout *formLayout_2;
+    QGridLayout *gridLayout;
     QLabel *lbDate;
     QDateEdit *dateEdit;
     QLabel *lbDateFormat;
     QGroupBox *groupTime;
-    QFormLayout *formLayout;
+    QGridLayout *gridLayout_2;
     QLabel *lbTime;
     QTimeEdit *timeEdit;
     QLabel *lbTimeFormat;
+    QGroupBox *groupHasTime;
+    QHBoxLayout *horizontalLayout_3;
     QCheckBox *checkTime;
 
     void setupUi(QWidget *DateTime)
@@ -63,22 +64,19 @@ public:
         frame->setStyleSheet(QString::fromUtf8(""));
         frame->setFrameShape(QFrame::NoFrame);
         frame->setFrameShadow(QFrame::Raised);
-        formLayout_3 = new QFormLayout(frame);
-        formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
-        verticalLayout = new QVBoxLayout();
+        verticalLayout = new QVBoxLayout(frame);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         groupDate = new QGroupBox(frame);
         groupDate->setObjectName(QString::fromUtf8("groupDate"));
         groupDate->setFlat(true);
-        formLayout_2 = new QFormLayout(groupDate);
-        formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
-        formLayout_2->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
+        gridLayout = new QGridLayout(groupDate);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         lbDate = new QLabel(groupDate);
         lbDate->setObjectName(QString::fromUtf8("lbDate"));
 
-        formLayout_2->setWidget(0, QFormLayout::LabelRole, lbDate);
+        gridLayout->addWidget(lbDate, 0, 0, 1, 1);
 
         dateEdit = new QDateEdit(groupDate);
         dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
@@ -89,13 +87,13 @@ public:
         dateEdit->setSizePolicy(sizePolicy);
         dateEdit->setCalendarPopup(true);
 
-        formLayout_2->setWidget(0, QFormLayout::FieldRole, dateEdit);
+        gridLayout->addWidget(dateEdit, 0, 1, 1, 1);
 
         lbDateFormat = new QLabel(groupDate);
         lbDateFormat->setObjectName(QString::fromUtf8("lbDateFormat"));
         lbDateFormat->setAlignment(Qt::AlignCenter);
 
-        formLayout_2->setWidget(1, QFormLayout::SpanningRole, lbDateFormat);
+        gridLayout->addWidget(lbDateFormat, 1, 0, 1, 2);
 
 
         horizontalLayout_2->addWidget(groupDate);
@@ -103,12 +101,12 @@ public:
         groupTime = new QGroupBox(frame);
         groupTime->setObjectName(QString::fromUtf8("groupTime"));
         groupTime->setFlat(true);
-        formLayout = new QFormLayout(groupTime);
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        gridLayout_2 = new QGridLayout(groupTime);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         lbTime = new QLabel(groupTime);
         lbTime->setObjectName(QString::fromUtf8("lbTime"));
 
-        formLayout->setWidget(0, QFormLayout::LabelRole, lbTime);
+        gridLayout_2->addWidget(lbTime, 0, 0, 1, 1);
 
         timeEdit = new QTimeEdit(groupTime);
         timeEdit->setObjectName(QString::fromUtf8("timeEdit"));
@@ -116,13 +114,13 @@ public:
         timeEdit->setSizePolicy(sizePolicy);
         timeEdit->setCalendarPopup(false);
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, timeEdit);
+        gridLayout_2->addWidget(timeEdit, 0, 1, 1, 1);
 
         lbTimeFormat = new QLabel(groupTime);
         lbTimeFormat->setObjectName(QString::fromUtf8("lbTimeFormat"));
         lbTimeFormat->setAlignment(Qt::AlignCenter);
 
-        formLayout->setWidget(1, QFormLayout::SpanningRole, lbTimeFormat);
+        gridLayout_2->addWidget(lbTimeFormat, 1, 0, 1, 2);
 
 
         horizontalLayout_2->addWidget(groupTime);
@@ -130,13 +128,21 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        checkTime = new QCheckBox(frame);
+        groupHasTime = new QGroupBox(frame);
+        groupHasTime->setObjectName(QString::fromUtf8("groupHasTime"));
+        groupHasTime->setFlat(true);
+        horizontalLayout_3 = new QHBoxLayout(groupHasTime);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        checkTime = new QCheckBox(groupHasTime);
         checkTime->setObjectName(QString::fromUtf8("checkTime"));
+        sizePolicy.setHeightForWidth(checkTime->sizePolicy().hasHeightForWidth());
+        checkTime->setSizePolicy(sizePolicy);
 
-        verticalLayout->addWidget(checkTime);
+        horizontalLayout_3->addWidget(checkTime);
 
+        checkTime->raise();
 
-        formLayout_3->setLayout(0, QFormLayout::LabelRole, verticalLayout);
+        verticalLayout->addWidget(groupHasTime);
 
 
         horizontalLayout->addWidget(frame);
@@ -187,6 +193,7 @@ public:
         groupTime->setTitle(QString());
         lbTime->setText(QApplication::translate("DateTime", "Time", 0, QApplication::UnicodeUTF8));
         lbTimeFormat->setText(QApplication::translate("DateTime", "-> TIME FORMAT", 0, QApplication::UnicodeUTF8));
+        groupHasTime->setTitle(QString());
         checkTime->setText(QApplication::translate("DateTime", "Has time", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
