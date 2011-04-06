@@ -57,6 +57,14 @@ void CustomTimeCtrl::setIsDateTime(const bool bDate, const bool bTime, const boo
     m_bDate=bDate;
     m_bTime=bTime;
     m_bCheck=bCheck;
+
     checkTime->setChecked(m_bDate && m_bTime);
     groupHasTime->setVisible(m_bCheck);
+    if (m_bCheck)
+        verticalLayout->addWidget(groupHasTime);
+    else
+        verticalLayout->addWidget(groupHasTime);
+
+    this->layout()->update();
+
 }
