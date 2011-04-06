@@ -26,7 +26,7 @@ public:
     void setDateTime(const QDateTime &datetime);
     QDateTime dateTime();
 
-    void                setIsDateTime(const bool bDate, const bool bTime);
+    void                setIsDateTime(const bool bDate, const bool bTime, const bool bCheck);
 
     void                setIsUTC(const bool bUTC)
                             {m_bUTC=bUTC;}
@@ -54,6 +54,7 @@ private:
     void                setFormatInfo();
     void                showHasDateTime();
 
+    bool                m_bCheck;
     bool                m_bDate;
     bool                m_bTime;
     bool                m_bUTC;

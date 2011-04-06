@@ -3,10 +3,12 @@
 CustomTimeCtrl::CustomTimeCtrl(QWidget *parent)
     : QWidget(parent)
 {
+    setupUi(this);
+    //Defaults
     m_bDate=true;
     m_bTime=true;
-    setupUi(this);
-    checkTime->setChecked(true);//Default
+    m_bCheck=true;
+    checkTime->setChecked(true);
     setFormatInfo();
 }
 
@@ -22,7 +24,6 @@ void CustomTimeCtrl::setFormatInfo()
 
 void CustomTimeCtrl::showEvent ( QShowEvent * event ){
     //Showing the form with no time option!
-    //checkTime->setVisible(m_bTime);
     showHasDateTime();
 }
 
@@ -37,6 +38,7 @@ void CustomTimeCtrl::showHasDateTime(){
 
     this->groupDate->setVisible(m_bDate);
     this->groupTime->setVisible(m_bTime);
+    this->groupHasTime->setVisible(m_bCheck);
 }
 
 QDateTime CustomTimeCtrl::dateTime()
@@ -50,10 +52,11 @@ void CustomTimeCtrl::setDateTime(const QDateTime& datetime)
     this->timeEdit->setTime(datetime.time());
 }
 
-void CustomTimeCtrl::setIsDateTime(const bool bDate, const bool bTime)
+void CustomTimeCtrl::setIsDateTime(const bool bDate, const bool bTime, const bool bCheck)
 {
     m_bDate=bDate;
     m_bTime=bTime;
+    m_bCheck=bCheck;
     checkTime->setChecked(m_bDate && m_bTime);
-    groupHasTime->setVisible(m_bDate);
+    groupHasTime->setVisible(m_bCheck);
 }
