@@ -34,11 +34,13 @@ public:
     void                setIsAuto(const bool bAuto)
                             {m_bAuto=bAuto; emit isAuto(m_bAuto);}
 
-    bool                getIsAuto(){return m_bAuto;}
-    bool                getIsUTC(){return m_bUTC;}
+    bool                getIsAuto()const {return m_bAuto;}
+    bool                getIsUTC()const {return m_bUTC;}
 
-    void                getIsDateTime(bool &bDate, bool &bTime)
+    void                getIsDateTime (bool &bDate, bool &bTime) const
                             {bDate=m_bDate; bTime=m_bTime;}
+
+    QCheckBox*          checkBox(){return checkTime;}
 
 signals:
     void                isAuto(bool bAuto);
