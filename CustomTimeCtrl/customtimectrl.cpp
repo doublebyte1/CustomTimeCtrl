@@ -5,6 +5,7 @@ CustomTimeCtrl::CustomTimeCtrl(QWidget *parent)
 {
     setupUi(this);
     //Defaults
+    m_row=-1;
     m_bDate=true;
     m_bTime=true;
     m_bCheck=true;
@@ -30,7 +31,7 @@ void CustomTimeCtrl::showEvent ( QShowEvent * event ){
 void CustomTimeCtrl::setHasTime ( bool bTime ){
 
     m_bTime=bTime;
-    emit isDateTime(bTime);
+    emit isDateTime(bTime, m_row);
     showHasDateTime();
 }
 
@@ -39,6 +40,35 @@ void CustomTimeCtrl::showHasDateTime(){
     this->groupDate->setVisible(m_bDate);
     this->groupTime->setVisible(m_bTime);
     this->groupHasTime->setVisible(m_bCheck);
+}
+
+void CustomTimeCtrl::adjustDateTime(QModelIndex index, QVariant var)
+{
+        //reads date type from database
+        //TODO: turn this into an ENUM?
+        //TODO: return values?
+    if (this->modelRow()==-1) return;
+
+    if (index.row()==this->modelRow()){
+
+        int dateType=var.toInt();
+
+        switch (dateType) {
+        case 1:
+            setIsDateTime(true,true,true);
+            break;
+        case 2:
+            setIsDateTime(true,false,false);
+            break;
+        case 3:
+            setIsDateTime(false,true,false);
+            break;
+        default:
+            return;
+            break;
+        }
+
+    }
 }
 
 QDateTime CustomTimeCtrl::dateTime()

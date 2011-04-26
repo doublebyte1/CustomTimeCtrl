@@ -26,6 +26,8 @@ public:
     void setDateTime(const QDateTime &datetime);
     QDateTime dateTime();
 
+    void                setModelRow(const int row){m_row=row;}
+
     void                setIsDateTime(const bool bDate, const bool bTime, const bool bCheck);
 
     void                setIsUTC(const bool bUTC)
@@ -34,15 +36,21 @@ public:
     void                setIsAuto(const bool bAuto)
                             {m_bAuto=bAuto; emit isAuto(m_bAuto);}
 
-    bool                getIsAuto(){return m_bAuto;}
-    bool                getIsUTC(){return m_bUTC;}
+    bool                getIsAuto()const {return m_bAuto;}
+    bool                getIsUTC()const {return m_bUTC;}
 
-    void                getIsDateTime(bool &bDate, bool &bTime)
+    void                getIsDateTime (bool &bDate, bool &bTime) const
                             {bDate=m_bDate; bTime=m_bTime;}
+
+    QCheckBox*          checkBox(){return checkTime;}
+    int                 modelRow() const {return m_row;}
+
+public slots:
+    void                adjustDateTime(QModelIndex index, QVariant var);
 
 signals:
     void                isAuto(bool bAuto);
-    void                isDateTime(bool bDateTime);
+    void                isDateTime(bool bDateTime, int row);
 
 protected:
     void                showEvent ( QShowEvent * event );
@@ -59,6 +67,7 @@ private:
     bool                m_bTime;
     bool                m_bUTC;
     bool                m_bAuto;
+    int                 m_row;
 };
 
 #endif // CUSTOMTIMECTRL_H
