@@ -44,31 +44,23 @@ void CustomTimeCtrl::showHasDateTime(){
 
 void CustomTimeCtrl::adjustDateTime(QModelIndex index, QVariant var)
 {
-        //reads date type from database
-        //TODO: turn this into an ENUM?
-        //TODO: return values?
-    if (this->modelRow()==-1) return;
+    int dateType=var.toInt();
 
-    if (index.row()==this->modelRow()){
-
-        int dateType=var.toInt();
-
-        switch (dateType) {
-        case 1:
-            setIsDateTime(true,true,true);
-            break;
-        case 2:
-            setIsDateTime(true,false,false);
-            break;
-        case 3:
-            setIsDateTime(false,true,false);
-            break;
-        default:
-            return;
-            break;
-        }
-
+    switch (dateType) {
+    case 1:
+        setIsDateTime(true,true,true);
+        break;
+    case 2:
+        setIsDateTime(true,false,false);
+        break;
+    case 3:
+        setIsDateTime(false,true,false);
+        break;
+    default:
+        return;
+        break;
     }
+
 }
 
 QDateTime CustomTimeCtrl::dateTime()
@@ -89,11 +81,12 @@ void CustomTimeCtrl::setIsDateTime(const bool bDate, const bool bTime, const boo
     m_bCheck=bCheck;
 
     checkTime->setChecked(m_bDate && m_bTime);
+    groupTime->setVisible(checkTime->isChecked());//this is just to make sure the check event was sent
     groupHasTime->setVisible(m_bCheck);
     if (m_bCheck)
         verticalLayout->addWidget(groupHasTime);
     else
-        verticalLayout->addWidget(groupHasTime);
+        verticalLayout->removeWidget(groupHasTime);
 
     this->layout()->update();
 
