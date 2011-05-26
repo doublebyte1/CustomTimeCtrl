@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Mon 23. May 16:59:38 2011
+** Created: Thu 26. May 16:38:57 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -16,7 +16,6 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
 #include <QtGui/QDateEdit>
-#include <QtGui/QFrame>
 #include <QtGui/QGridLayout>
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
@@ -31,9 +30,6 @@ QT_BEGIN_NAMESPACE
 class Ui_DateTime
 {
 public:
-    QGridLayout *gridLayout_4;
-    QFrame *frame;
-    QGridLayout *gridLayout_3;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_2;
     QGroupBox *groupDate;
@@ -54,35 +50,21 @@ public:
     {
         if (DateTime->objectName().isEmpty())
             DateTime->setObjectName(QString::fromUtf8("DateTime"));
-        DateTime->resize(320, 147);
+        DateTime->resize(295, 127);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/agenda.png"), QSize(), QIcon::Normal, QIcon::Off);
         DateTime->setWindowIcon(icon);
-        gridLayout_4 = new QGridLayout(DateTime);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        frame = new QFrame(DateTime);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
-        frame->setSizePolicy(sizePolicy);
-        frame->setStyleSheet(QString::fromUtf8(""));
-        frame->setFrameShape(QFrame::NoFrame);
-        frame->setFrameShadow(QFrame::Raised);
-        gridLayout_3 = new QGridLayout(frame);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        verticalLayout = new QVBoxLayout();
+        verticalLayout = new QVBoxLayout(DateTime);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        groupDate = new QGroupBox(frame);
+        groupDate = new QGroupBox(DateTime);
         groupDate->setObjectName(QString::fromUtf8("groupDate"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Minimum);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(groupDate->sizePolicy().hasHeightForWidth());
-        groupDate->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(groupDate->sizePolicy().hasHeightForWidth());
+        groupDate->setSizePolicy(sizePolicy);
         groupDate->setFlat(true);
         gridLayout = new QGridLayout(groupDate);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -93,22 +75,19 @@ public:
 
         dateEdit = new QDateEdit(groupDate);
         dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(dateEdit->sizePolicy().hasHeightForWidth());
-        dateEdit->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(dateEdit->sizePolicy().hasHeightForWidth());
+        dateEdit->setSizePolicy(sizePolicy1);
         dateEdit->setCalendarPopup(true);
 
         gridLayout->addWidget(dateEdit, 0, 1, 1, 1);
 
         lbDateFormat = new QLabel(groupDate);
         lbDateFormat->setObjectName(QString::fromUtf8("lbDateFormat"));
-        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(lbDateFormat->sizePolicy().hasHeightForWidth());
-        lbDateFormat->setSizePolicy(sizePolicy3);
+        sizePolicy.setHeightForWidth(lbDateFormat->sizePolicy().hasHeightForWidth());
+        lbDateFormat->setSizePolicy(sizePolicy);
         lbDateFormat->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(lbDateFormat, 1, 0, 1, 2);
@@ -116,10 +95,10 @@ public:
 
         horizontalLayout_2->addWidget(groupDate);
 
-        groupTime = new QGroupBox(frame);
+        groupTime = new QGroupBox(DateTime);
         groupTime->setObjectName(QString::fromUtf8("groupTime"));
-        sizePolicy1.setHeightForWidth(groupTime->sizePolicy().hasHeightForWidth());
-        groupTime->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(groupTime->sizePolicy().hasHeightForWidth());
+        groupTime->setSizePolicy(sizePolicy);
         groupTime->setFlat(true);
         gridLayout_2 = new QGridLayout(groupTime);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -130,16 +109,16 @@ public:
 
         timeEdit = new QTimeEdit(groupTime);
         timeEdit->setObjectName(QString::fromUtf8("timeEdit"));
-        sizePolicy2.setHeightForWidth(timeEdit->sizePolicy().hasHeightForWidth());
-        timeEdit->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(timeEdit->sizePolicy().hasHeightForWidth());
+        timeEdit->setSizePolicy(sizePolicy1);
         timeEdit->setCalendarPopup(false);
 
         gridLayout_2->addWidget(timeEdit, 0, 1, 1, 1);
 
         lbTimeFormat = new QLabel(groupTime);
         lbTimeFormat->setObjectName(QString::fromUtf8("lbTimeFormat"));
-        sizePolicy3.setHeightForWidth(lbTimeFormat->sizePolicy().hasHeightForWidth());
-        lbTimeFormat->setSizePolicy(sizePolicy3);
+        sizePolicy.setHeightForWidth(lbTimeFormat->sizePolicy().hasHeightForWidth());
+        lbTimeFormat->setSizePolicy(sizePolicy);
         lbTimeFormat->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(lbTimeFormat, 1, 0, 1, 2);
@@ -150,28 +129,22 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        groupHasTime = new QGroupBox(frame);
+        groupHasTime = new QGroupBox(DateTime);
         groupHasTime->setObjectName(QString::fromUtf8("groupHasTime"));
-        sizePolicy3.setHeightForWidth(groupHasTime->sizePolicy().hasHeightForWidth());
-        groupHasTime->setSizePolicy(sizePolicy3);
+        sizePolicy.setHeightForWidth(groupHasTime->sizePolicy().hasHeightForWidth());
+        groupHasTime->setSizePolicy(sizePolicy);
         groupHasTime->setFlat(true);
         horizontalLayout = new QHBoxLayout(groupHasTime);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         checkTime = new QCheckBox(groupHasTime);
         checkTime->setObjectName(QString::fromUtf8("checkTime"));
-        sizePolicy2.setHeightForWidth(checkTime->sizePolicy().hasHeightForWidth());
-        checkTime->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(checkTime->sizePolicy().hasHeightForWidth());
+        checkTime->setSizePolicy(sizePolicy1);
 
         horizontalLayout->addWidget(checkTime);
 
 
         verticalLayout->addWidget(groupHasTime);
-
-
-        gridLayout_3->addLayout(verticalLayout, 0, 0, 1, 1);
-
-
-        gridLayout_4->addWidget(frame, 0, 0, 1, 1);
 
 #ifndef QT_NO_SHORTCUT
         lbDate->setBuddy(dateEdit);
