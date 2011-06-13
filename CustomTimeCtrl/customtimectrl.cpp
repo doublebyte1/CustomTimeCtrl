@@ -91,7 +91,13 @@ QDateTime CustomTimeCtrl::dateTime()
 {
     return QDateTime(dateEdit->date(),timeEdit->time(),m_bUTC? Qt::UTC: Qt::LocalTime);//TODO: read timespec from variable
 }
- 
+
+void CustomTimeCtrl::selectAll()
+{
+    dateEdit->selectAll();
+    timeEdit->selectAll();
+}
+
 void CustomTimeCtrl::setDateTime(const QDateTime& datetime)
 {
     this->dateEdit->setDate(datetime.date());

@@ -85,6 +85,8 @@ public:
     */
     int                 modelRow() const {return m_row;}
 
+    void                selectAll();
+
 public slots:
     void                adjustDateTime(QModelIndex index, QVariant var);
 
