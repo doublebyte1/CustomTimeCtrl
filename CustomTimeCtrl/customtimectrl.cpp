@@ -11,10 +11,34 @@ CustomTimeCtrl::CustomTimeCtrl(QWidget *parent)
     m_bCheck=true;
     checkTime->setChecked(true);
     setFormatInfo();
+
+    connect(dateEdit, SIGNAL(dateChanged ( const QDate &)), this,
+        SLOT(onDateChanged(const QDate& )));
+
+    connect(timeEdit, SIGNAL(timeChanged ( const QTime &)), this,
+        SLOT(onTimeChanged(const QTime& )));
 }
 
 CustomTimeCtrl::~CustomTimeCtrl()
 {
+}
+
+void CustomTimeCtrl::onDateChanged(const QDate& newDate)
+{
+    QDateTime dt;
+    dt.setDate(newDate);
+    dt.setTime(this->timeEdit->time());
+
+    emit dateTimeChanged(dt);
+}
+
+void CustomTimeCtrl::onTimeChanged(const QTime& newTime)
+{
+    QDateTime dt;
+    dt.setDate(this->dateEdit->date());
+    dt.setTime(newTime);
+
+    emit dateTimeChanged(dt);
 }
 
 void CustomTimeCtrl::setFormatInfo()
