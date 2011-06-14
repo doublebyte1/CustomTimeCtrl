@@ -89,6 +89,7 @@ public:
 
 public slots:
     void                adjustDateTime(QModelIndex index, QVariant var);
+    void                blockSignals(const bool bBlock);
 
 signals:
     //! Is auto field

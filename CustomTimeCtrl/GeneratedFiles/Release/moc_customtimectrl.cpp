@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'customtimectrl.h'
 **
-** Created: Mon 13. Jun 17:17:47 2011
+** Created: Tue 14. Jun 11:31:10 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,8 +23,8 @@ static const uint qt_meta_data_CustomTimeCtrl[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
-       1,   49, // properties
+       8,   14, // methods
+       1,   54, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -37,12 +37,13 @@ static const uint qt_meta_data_CustomTimeCtrl[] = {
 
  // slots: signature, parameters, type, tag, flags
      116,  106,   15,   15, 0x0a,
-     159,  153,   15,   15, 0x08,
-     184,  176,   15,   15, 0x08,
-     213,  205,   15,   15, 0x08,
+     160,  153,   15,   15, 0x0a,
+     185,  179,   15,   15, 0x08,
+     210,  202,   15,   15, 0x08,
+     239,  231,   15,   15, 0x08,
 
  // properties: name, type, flags
-     244,  234, 0x10595103,
+     270,  260, 0x10595103,
 
  // properties: notify_signal_id
        2,
@@ -55,9 +56,10 @@ static const char qt_meta_stringdata_CustomTimeCtrl[] = {
     "bDateTime,row\0isDateTime(bool,int)\0"
     "datetime\0dateTimeChanged(QDateTime)\0"
     "index,var\0adjustDateTime(QModelIndex,QVariant)\0"
-    "bTime\0setHasTime(bool)\0newDate\0"
-    "onDateChanged(QDate)\0newTime\0"
-    "onTimeChanged(QTime)\0QDateTime\0dateTime\0"
+    "bBlock\0blockSignals(bool)\0bTime\0"
+    "setHasTime(bool)\0newDate\0onDateChanged(QDate)\0"
+    "newTime\0onTimeChanged(QTime)\0QDateTime\0"
+    "dateTime\0"
 };
 
 const QMetaObject CustomTimeCtrl::staticMetaObject = {
@@ -95,12 +97,13 @@ int CustomTimeCtrl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 1: isDateTime((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 2: dateTimeChanged((*reinterpret_cast< const QDateTime(*)>(_a[1]))); break;
         case 3: adjustDateTime((*reinterpret_cast< QModelIndex(*)>(_a[1])),(*reinterpret_cast< QVariant(*)>(_a[2]))); break;
-        case 4: setHasTime((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 5: onDateChanged((*reinterpret_cast< const QDate(*)>(_a[1]))); break;
-        case 6: onTimeChanged((*reinterpret_cast< const QTime(*)>(_a[1]))); break;
+        case 4: blockSignals((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 5: setHasTime((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: onDateChanged((*reinterpret_cast< const QDate(*)>(_a[1]))); break;
+        case 7: onTimeChanged((*reinterpret_cast< const QTime(*)>(_a[1]))); break;
         default: ;
         }
-        _id -= 7;
+        _id -= 8;
     }
 #ifndef QT_NO_PROPERTIES
       else if (_c == QMetaObject::ReadProperty) {

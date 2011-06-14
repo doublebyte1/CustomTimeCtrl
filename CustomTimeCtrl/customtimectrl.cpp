@@ -98,6 +98,12 @@ void CustomTimeCtrl::selectAll()
     timeEdit->selectAll();
 }
 
+void CustomTimeCtrl::blockSignals(const bool bBlock)
+{
+    dateEdit->blockSignals(bBlock);
+    timeEdit->blockSignals(bBlock);
+}
+
 void CustomTimeCtrl::setDateTime(const QDateTime& datetime)
 {
     this->dateEdit->setDate(datetime.date());
