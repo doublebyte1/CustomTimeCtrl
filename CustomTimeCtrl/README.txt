@@ -8,7 +8,14 @@ On the project using the plugin, you must:
 And everyting should be fine and the widget should "magically" appear on the designer!
 Have fun!!! :-))
 
-TODO:
-- widget must make an insertion on table X, of:
-location, dt utc, dt_localtime (directly), dt_type
-and then return the id of the inserted date to the current record
+
+---- QUICK WAY TO BUILD (on the command line) ----------------
+in the project path:
+
+1 - nmake debug & nmake release
+7 - copy %QTDIR%\plugins\designer\customTimeCtrl*.dll [directory of the project/program that uses the plugin]
+
+explanation:
+- build debug version
+- build release version
+- (eventually) copy dlls to the directory of the project that uses this plugin
