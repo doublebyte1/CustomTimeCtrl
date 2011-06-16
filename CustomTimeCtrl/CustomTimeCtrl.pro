@@ -19,7 +19,7 @@ CONFIG += debug_and_release
      TARGET = customtimectrl
  }
 
-DESTDIR = ../../../../Qt/2010.04/qt/plugins/designer
+DESTDIR = $$[QT_INSTALL_PLUGINS]/designer
 QT += core gui sql qtmain designer
 CONFIG += qtestlib designer plugin
 DEFINES += QT_LARGEFILE_SUPPORT QT_SQL_LIB
