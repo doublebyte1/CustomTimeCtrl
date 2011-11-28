@@ -75,10 +75,10 @@ void CustomTimeCtrl::adjustDateTime(QModelIndex index, QVariant var)
         setIsDateTime(true,true,true);
         break;
     case 2:
-        setIsDateTime(true,false,false);
+        setIsDateTime(true,false,true);
         break;
     case 3:
-        setIsDateTime(false,true,false);
+        setIsDateTime(false,true,true);
         break;
     default:
         return;

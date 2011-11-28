@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>295</width>
+    <width>301</width>
     <height>127</height>
    </rect>
   </property>
@@ -29,7 +29,7 @@
      <item>
       <widget class="QGroupBox" name="groupDate">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -63,10 +63,16 @@
         <item row="0" column="1">
          <widget class="QDateEdit" name="dateEdit">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>87</width>
+            <height>20</height>
+           </size>
           </property>
           <property name="calendarPopup">
            <bool>true</bool>
@@ -80,6 +86,12 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>112</width>
+            <height>13</height>
+           </size>
           </property>
           <property name="text">
            <string>-&gt; DATE FORMAT</string>
@@ -95,7 +107,7 @@
      <item>
       <widget class="QGroupBox" name="groupTime">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -129,10 +141,16 @@
         <item row="0" column="1">
          <widget class="QTimeEdit" name="timeEdit">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>87</width>
+            <height>20</height>
+           </size>
           </property>
           <property name="calendarPopup">
            <bool>false</bool>
@@ -142,10 +160,16 @@
         <item row="1" column="0" colspan="2">
          <widget class="QLabel" name="lbTimeFormat">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>112</width>
+            <height>13</height>
+           </size>
           </property>
           <property name="text">
            <string>-&gt; TIME FORMAT</string>
@@ -163,7 +187,7 @@
    <item>
     <widget class="QGroupBox" name="groupHasTime">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
