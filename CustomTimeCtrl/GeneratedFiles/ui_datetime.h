@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Mon 28. Nov 13:05:23 2011
+** Created: Fri 2. Dec 14:23:25 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -51,6 +51,7 @@ public:
         if (DateTime->objectName().isEmpty())
             DateTime->setObjectName(QString::fromUtf8("DateTime"));
         DateTime->resize(301, 127);
+        DateTime->setFocusPolicy(Qt::TabFocus);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/agenda.png"), QSize(), QIcon::Normal, QIcon::Off);
         DateTime->setWindowIcon(icon);
@@ -81,6 +82,7 @@ public:
         sizePolicy1.setHeightForWidth(dateEdit->sizePolicy().hasHeightForWidth());
         dateEdit->setSizePolicy(sizePolicy1);
         dateEdit->setMinimumSize(QSize(87, 20));
+        dateEdit->setFocusPolicy(Qt::WheelFocus);
         dateEdit->setCalendarPopup(true);
 
         gridLayout->addWidget(dateEdit, 0, 1, 1, 1);
@@ -117,6 +119,7 @@ public:
         sizePolicy1.setHeightForWidth(timeEdit->sizePolicy().hasHeightForWidth());
         timeEdit->setSizePolicy(sizePolicy1);
         timeEdit->setMinimumSize(QSize(87, 20));
+        timeEdit->setFocusPolicy(Qt::WheelFocus);
         timeEdit->setCalendarPopup(false);
 
         gridLayout_2->addWidget(timeEdit, 0, 1, 1, 1);
@@ -150,6 +153,7 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(checkTime->sizePolicy().hasHeightForWidth());
         checkTime->setSizePolicy(sizePolicy3);
+        checkTime->setFocusPolicy(Qt::TabFocus);
 
         horizontalLayout->addWidget(checkTime);
 
