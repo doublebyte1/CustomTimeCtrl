@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Fri 2. Dec 14:23:25 2011
+** Created: Wed 21. Dec 15:10:20 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -50,7 +50,8 @@ public:
     {
         if (DateTime->objectName().isEmpty())
             DateTime->setObjectName(QString::fromUtf8("DateTime"));
-        DateTime->resize(301, 127);
+        DateTime->resize(300, 117);
+        DateTime->setMinimumSize(QSize(300, 117));
         DateTime->setFocusPolicy(Qt::TabFocus);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/agenda.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -66,6 +67,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(groupDate->sizePolicy().hasHeightForWidth());
         groupDate->setSizePolicy(sizePolicy);
+        groupDate->setMinimumSize(QSize(137, 51));
         groupDate->setFlat(true);
         gridLayout = new QGridLayout(groupDate);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -76,7 +78,7 @@ public:
 
         dateEdit = new QDateEdit(groupDate);
         dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(dateEdit->sizePolicy().hasHeightForWidth());
@@ -106,6 +108,7 @@ public:
         groupTime->setObjectName(QString::fromUtf8("groupTime"));
         sizePolicy.setHeightForWidth(groupTime->sizePolicy().hasHeightForWidth());
         groupTime->setSizePolicy(sizePolicy);
+        groupTime->setMinimumSize(QSize(137, 51));
         groupTime->setFlat(true);
         gridLayout_2 = new QGridLayout(groupTime);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -148,11 +151,8 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         checkTime = new QCheckBox(groupHasTime);
         checkTime->setObjectName(QString::fromUtf8("checkTime"));
-        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(checkTime->sizePolicy().hasHeightForWidth());
-        checkTime->setSizePolicy(sizePolicy3);
+        sizePolicy1.setHeightForWidth(checkTime->sizePolicy().hasHeightForWidth());
+        checkTime->setSizePolicy(sizePolicy1);
         checkTime->setFocusPolicy(Qt::TabFocus);
 
         horizontalLayout->addWidget(checkTime);

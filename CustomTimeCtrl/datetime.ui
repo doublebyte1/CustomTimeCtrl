@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>301</width>
-    <height>127</height>
+    <width>300</width>
+    <height>117</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>117</height>
+   </size>
   </property>
   <property name="focusPolicy">
    <enum>Qt::TabFocus</enum>
@@ -36,6 +42,12 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>137</width>
+         <height>51</height>
+        </size>
        </property>
        <property name="toolTip">
         <string>Input the date here</string>
@@ -66,7 +78,7 @@
         <item row="0" column="1">
          <widget class="QDateEdit" name="dateEdit">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -118,6 +130,12 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>137</width>
+         <height>51</height>
+        </size>
+       </property>
        <property name="toolTip">
         <string>Input the time here</string>
        </property>
@@ -147,7 +165,7 @@
         <item row="0" column="1">
          <widget class="QTimeEdit" name="timeEdit">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
