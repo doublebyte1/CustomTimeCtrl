@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Wed 21. Dec 15:10:20 2011
+** Created: Fri 23. Dec 18:13:07 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
