@@ -90,7 +90,7 @@
            </size>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::WheelFocus</enum>
+           <enum>Qt::StrongFocus</enum>
           </property>
           <property name="calendarPopup">
            <bool>true</bool>
@@ -177,7 +177,7 @@
            </size>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::WheelFocus</enum>
+           <enum>Qt::StrongFocus</enum>
           </property>
           <property name="calendarPopup">
            <bool>false</bool>
@@ -218,6 +218,9 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
      </property>
      <property name="title">
       <string/>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'datetime.ui'
 **
-** Created: Fri 23. Dec 18:13:07 2011
+** Created: Mon 23. Jan 09:40:46 2012
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -84,7 +84,7 @@ public:
         sizePolicy1.setHeightForWidth(dateEdit->sizePolicy().hasHeightForWidth());
         dateEdit->setSizePolicy(sizePolicy1);
         dateEdit->setMinimumSize(QSize(87, 20));
-        dateEdit->setFocusPolicy(Qt::WheelFocus);
+        dateEdit->setFocusPolicy(Qt::StrongFocus);
         dateEdit->setCalendarPopup(true);
 
         gridLayout->addWidget(dateEdit, 0, 1, 1, 1);
@@ -122,7 +122,7 @@ public:
         sizePolicy1.setHeightForWidth(timeEdit->sizePolicy().hasHeightForWidth());
         timeEdit->setSizePolicy(sizePolicy1);
         timeEdit->setMinimumSize(QSize(87, 20));
-        timeEdit->setFocusPolicy(Qt::WheelFocus);
+        timeEdit->setFocusPolicy(Qt::StrongFocus);
         timeEdit->setCalendarPopup(false);
 
         gridLayout_2->addWidget(timeEdit, 0, 1, 1, 1);
@@ -146,6 +146,7 @@ public:
         groupHasTime->setObjectName(QString::fromUtf8("groupHasTime"));
         sizePolicy.setHeightForWidth(groupHasTime->sizePolicy().hasHeightForWidth());
         groupHasTime->setSizePolicy(sizePolicy);
+        groupHasTime->setFocusPolicy(Qt::StrongFocus);
         groupHasTime->setFlat(true);
         horizontalLayout = new QHBoxLayout(groupHasTime);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
